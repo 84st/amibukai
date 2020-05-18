@@ -1,0 +1,17 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">作業を記録する</h1>
+    <%= form_tag("/posts/create", multipart: true) do %>
+      <div class="form">
+        <div class="form-body">
+          <p>作目</p><input name="item">
+          <p>作業内容</p><input name="work">
+          <p>詳細</p><textarea name="report"></textarea>
+          <p>画像</p><input name="media" type="file">
+          <input type="submit" value="記録する">
+        </div>
+      </div>
+    <% end %>
+    
+  </div>
+</div>

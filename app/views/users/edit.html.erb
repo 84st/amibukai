@@ -1,0 +1,25 @@
+<div class="main users-edit">
+  <div class="container">
+    <div class="form-heading">アカウント編集</div>
+    <div class="form users-form">
+      <div class="form-body">
+      
+        <%= form_tag("/users/#{@user.id}/update") do %>
+          <p>ユーザー名</p>
+          <input name="name" value="<%= @user.name %>">
+          <p>メールアドレス</p>
+          <input name="email" value="<%= @user.email %>">
+          <p>パスワード</p>
+          <input name="password" value="<%= @user.password %>">
+          <p>都道府県</p>
+          <input name="prefecture" value="<%= @user.prefecture %>">
+          <p>地域（例：袋井、八代、など）</p>
+          <input name="area" value="<%= @user.area %>">
+          <p>栽培面積</p>
+          <input name="cultivation_area" value="<%= @user.cultivation_area %>">
+          <input type="submit" value="保存">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

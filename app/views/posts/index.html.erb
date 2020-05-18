@@ -1,0 +1,32 @@
+<div class="main posts-index">
+  <div class="container">
+  <% @posts.each do |post| %>  
+    <div class="posts-index-item">
+      <div class="post-user-name">
+        <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+      </div>
+
+
+
+      <p class="report">
+        <%= link_to(post.item, "/posts/#{post.id}") %>
+        <%= link_to(post.work, "/posts/#{post.id}") %>
+      </p>
+
+      <p>
+        <%= link_to(post.report, "/posts/#{post.id}") %>
+      </p>
+
+      <% if post.image.media_name %>
+      <p>
+        <img src="<%= post.image.media_name.post_image %>" >
+      </p>
+      <% end %>
+
+      <p class="created_at">
+        <%= link_to(post.created_at, "/posts/#{post.id}") %>
+      </p>
+    </div>  
+  <% end %>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">新規アカウント登録</div>
+    <div class="form users-form">
+      <div class="form-body">
+      <%= form_tag("/users/create") do %>
+        <p>ユーザー名</p>
+        <input name="name" >
+        <p>メールアドレス</p>
+        <input name="email">
+        <p>都道府県</p>
+        <input name="prefecture">
+        <p>地域名</p>
+        <input name="area">
+        <p>栽培面積 (単位：反 一番近い整数で入力してください)
+        <input name="cultivation_area">
+        </p>
+        <p>パスワード</p>
+        <input type="password" name="password">
+        <input type="submit" value="新規登録">
+      <% end %>
+        
+      </div>
+    </div>
+  </div>
+</div>
