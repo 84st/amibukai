@@ -9,15 +9,15 @@ RUN apt-get update -qq && \
                        nodejs           
 
 # 作業ディレクトリの作成、設定
-RUN mkdir /app_name 
+RUN mkdir /app
 ##作業ディレクトリ名をAPP_ROOTに割り当てて、以下$APP_ROOTで参照
 
-WORKDIR /app_name
+WORKDIR /app
 
 # ホスト側（ローカル）のGemfileを追加する（ローカルのGemfileは【３】で作成）
-ADD ./Gemfile /app_name/Gemfile
-ADD ./Gemfile.lock /app_name/Gemfile.lock
+ADD ./Gemfile /app/Gemfile
+ADD ./Gemfile.lock /app/Gemfile.lock
 
 # Gemfileのbundle install
 RUN gem install bundler && bundle install
-ADD . /app_name
+ADD . /app
