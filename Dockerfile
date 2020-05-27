@@ -15,8 +15,8 @@ RUN mkdir /app
 WORKDIR /app
 
 # ホスト側（ローカル）のGemfileを追加する（ローカルのGemfileは【３】で作成）
-ADD ./Gemfile /app/Gemfile
-ADD ./Gemfile.lock /app/Gemfile.lock
+ADD Gemfile /app/Gemfile
+ADD Gemfile.lock /app/Gemfile.lock
 
 # Gemfileのbundle install
 RUN gem install bundler && bundle install
