@@ -3,7 +3,9 @@ services:
   nginx:
     build: containers/nginx
     volumes:
-      - web
+      - .:/app
+      - public-data:/app/public
+      - tmp-data:/app/tmp
     ports:
       - 80:80
     depends_on:
@@ -23,6 +25,8 @@ services:
     command: bundle exec  puma -C config/puma.rb
     volumes:
       - .:/app
+      - public-data:/app/public
+      - tmp-data:/app/tmp
     ports:
       - "3000:3000"
     links:
