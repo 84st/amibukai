@@ -25,6 +25,7 @@ services:
     command: bundle exec  puma -C config/puma.rb
     volumes:
       - .:/app
+      - public-data:/app/public
       - tmp-data:/app/tmp/sockets
     ports:
       - "3000:3000"
