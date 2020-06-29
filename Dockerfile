@@ -2,11 +2,15 @@
 # 19.01.20現在最新安定版のイメージを取得
 FROM ruby:2.5.7
 
+RUN curl https://deb.nodesource.com/setup_12.x | bash
+RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 # 必要なパッケージのインストール（基本的に必要になってくるものだと思うので削らないこと）
 RUN apt-get update -qq && \
     apt-get install -y build-essential \ 
                        libpq-dev \        
-                       nodejs           
+                       nodejs \
+                       yarn         
 
 # 作業ディレクトリの作成、設定
 RUN mkdir /app
