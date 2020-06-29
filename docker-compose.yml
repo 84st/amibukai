@@ -5,7 +5,7 @@ services:
     volumes:
       - .:/app
       - public-data:/app/public
-      - tmp-data:/app/tmp
+      - tmp-data:/app/tmp/sockets
     ports:
       - 80:80
     depends_on:
@@ -25,8 +25,7 @@ services:
     command: bundle exec  puma -C config/puma.rb
     volumes:
       - .:/app
-      - public-data:/app/public
-      - tmp-data:/app/tmp
+      - tmp-data:/app/tmp/sockets
     ports:
       - "3000:3000"
     links:
@@ -34,6 +33,6 @@ services:
     environment:
       RAILS_ENV: production
 
-  volumes:
-    public-data:
-    tmp-data:
+volumes:
+  public-data:
+  tmp-data:
