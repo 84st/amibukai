@@ -33,3 +33,7 @@ services:
       - db
     environment:
       RAILS_ENV: production
+
+  volumes:
+    public-data:
+    tmp-data:
